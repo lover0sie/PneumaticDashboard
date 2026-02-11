@@ -508,15 +508,22 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/fireba
       const span = window.max - window.min;
 
       for (let t = window.min; t <= window.max; t += step){
-        const pct = ((t - window.min) / span) * 100;
 
         const s = document.createElement("span");
-        s.style.left = pct + "%";
         s.classList.add("major");
 
-        // FIX: edge alignment
-        if (t === window.min) s.classList.add("edge-left");
-        if (t === window.max) s.classList.add("edge-right");
+        // 🧠 EDGE FIX
+        if (t === window.min){
+          s.classList.add("edge-left");
+        }
+        else if (t === window.max){
+          s.classList.add("edge-right");
+        }
+        else{
+          const pct = ((t - window.min) / span) * 100;
+          s.style.left = pct + "%";
+          s.style.transform = "translateX(-50%)";
+        }
 
         s.textContent = new Date(t).toLocaleTimeString([], {
           hour: "numeric",

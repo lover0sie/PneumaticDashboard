@@ -150,37 +150,33 @@
       position:absolute;
       left:0;
       right:0;
-      top: 100%;
-      margin-top: 6px;
-      height: 16px;
-      pointer-events:none;
+      top:100%;
+      margin-top:6px;
+      height:16px;
       font-size:11px;
       color:var(--muted);
-      display:block;
+      pointer-events:none;
     }
 
 
     .barTicks span{
       position:absolute;              /* each label placed by JS */
-      transform: translateX(-50%);    /* center on the tick */
       white-space:nowrap;
     }
 
     /* First label: 8:00 AM */
     .barTicks span.edge-left{
-      transform: translateX(0);     /* no centering */
+      left:0;
+      transform:none;
       text-align:left;
     }
 
     /* Last label: 6:00 PM */
     .barTicks span.edge-right{
-      transform: translateX(-100%); /* align to the right edge */
+      right:0;
+      left:auto;
+      transform:none;
       text-align:right;
-    }
-
-    /* Only hour ticks show labels */
-    .barTicks span.minor{
-      transform: translateX(-50%);
     }
 
     /* Make major labels slightly clearer */
