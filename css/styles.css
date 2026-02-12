@@ -4,7 +4,7 @@
     }
 
     body{ font-family: Arial, sans-serif; margin:0; padding:16px; background:var(--bg); color:var(--text); font-size: 12px; }
-    .wrap{ max-width: 1600px; margin:0 auto; }  /* or 1800px */
+    .wrap{ max-width: 1900px; margin:0 auto; }  /* or 1800px */
     h2{ margin:0 0 12px; }
 
     .card{
@@ -39,7 +39,7 @@
     /* Make header + rows wider than the card so it scrolls */
     .thead, .trow{
       display:grid;
-      grid-template-columns: 260px 130px 130px 120px 1fr;
+      grid-template-columns: 220px 110px 110px 100px 1fr;
       align-items:center;
     }
 
